@@ -5,4 +5,4 @@ This is a project in which I rebranded the careers page of tradehelm/majorkey, I
 
   <img src="https://media.giphy.com/media/gH3LO09IOiZIqePwv9/giphy.gif" width="50" />
   
-  <img src="https://media.discordapp.net/attachments/769061823596068874/965661197791801374/old.PNG" width="50" />
+  <img src="https://media.discordapp.net/attachments/769061823596068874/965661197791801374/old.PNG" width="100%" />
