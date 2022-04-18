@@ -5,6 +5,7 @@ import {useRouter} from 'next/router'
 
 export default function Home({jobs}) {
     const [items,setItems] = useState(jobs)
+    const [itemsStatic,setItemsStatic] = useState(jobs)
     const itemsPerPage = 12;
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
@@ -25,6 +26,7 @@ export default function Home({jobs}) {
             const valueLowerCase= input.toLowerCase()
             return title.includes(valueLowerCase)
         })
+        console.log(input)
         setItems(filtered)
         setInput("")
     }
@@ -36,7 +38,7 @@ export default function Home({jobs}) {
         }, [itemOffset, itemsPerPage,items]);
     
     useEffect(() => {
-        const mapItems = items.map(e => e.publishedCategory.name)
+        const mapItems = itemsStatic.map(e => e.publishedCategory.name)
         setCategories([ ...new Set(mapItems)])
     }, [items])
     
@@ -46,16 +48,10 @@ export default function Home({jobs}) {
         setItemOffset(newOffset);
     };
 
-    const handleFilter = (e) =>{
-        e.preventDefault()
-        const {value} = e.target
-        const ordered = items.filter(e =>{
-            const category= e.publishedCategory.name.toLowerCase()
-            const valueLowerCase= value.toLowerCase()
-            console.log(value,"yo")
-            return category.includes(valueLowerCase)
+    const handleFilter = (category) =>{
+        const ordered = itemsStatic.filter(e =>{
+            return e.publishedCategory.name.toLowerCase().includes(category.toLowerCase())
         })
-        console.log(ordered)
         setItems(ordered)
     }
   
@@ -77,8 +73,15 @@ export default function Home({jobs}) {
             <div className='group my-auto flex ml-12 sm:ml-0 justify-center relative'>
                 Filter by ⤵
                 <div className='flex-col overflow-y-auto max-h-56 overflow-x-auto rounded-sm bg-slate-500 mt-6 space-y-2 w-fit p-3 absolute hidden group-hover:block'>
-                    {categories && categories.map(e => {
-                        return <button key={e} onClick={(e) => handleFilter(e)} className='hover:bg-slate-300 p-2'>{e}</button>
+                    {categories && categories.map((e,i) => {
+                        return (
+                        <button 
+                        key={i}
+                        onClick={() => handleFilter(e)} 
+                        className='hover:bg-slate-300 p-2'>
+                            {e}
+                        </button>
+                        )
                     })}
                 </div>
             </div>
