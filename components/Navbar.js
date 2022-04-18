@@ -7,6 +7,7 @@ export default function Navbar() {
     <div className='bg-primary/95'>
         <Image 
         src={logo}
+        alt="logo";
         />
         
     </div>

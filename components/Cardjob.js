@@ -10,7 +10,7 @@ export default function Cardjob({type,description,title,isOpen,isClosed,category
             <p>{type}</p>
             <p className='w-10/12 m-auto'>{descrip.slice(0,100)}-</p>
             <div className='flex justify-center'>
-                <a className='text-tertiary font-medium hover:opacity-60 cursor-pointer' href={`https://tradehelm.com/wp-content/plugins/bullhorn-oscp/#/jobs/${id}`} target="_blank" >
+                <a className='text-tertiary font-medium hover:opacity-60 cursor-pointer' href={`https://tradehelm.com/wp-content/plugins/bullhorn-oscp/#/jobs/${id}`} target="_blank" rel="noreferrer" >
                 View detail
                 </a>
             </div>

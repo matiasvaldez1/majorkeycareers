@@ -78,7 +78,7 @@ export default function Home({jobs}) {
                 Filter by ⤵
                 <div className='flex-col overflow-y-auto max-h-56 overflow-x-auto rounded-sm bg-slate-500 mt-6 space-y-2 w-fit p-3 absolute hidden group-hover:block'>
                     {categories && categories.map(e => {
-                        return <button onClick={(e) => handleFilter(e)} className='hover:bg-slate-300 p-2'>{e}</button>
+                        return <button key={e} onClick={(e) => handleFilter(e)} className='hover:bg-slate-300 p-2'>{e}</button>
                     })}
                 </div>
             </div>
