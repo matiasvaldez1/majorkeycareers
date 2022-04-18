@@ -14,8 +14,9 @@ export default function Cardjob({type,description,title,isOpen,isClosed,category
         category={category}
         id={id}
         type={type}
+        isOpen={isOpen}
         /> : null}
-        <div className='bg-gray-100 my-12 text-center select-none space-y-3 rounded-md hover:bg-gray-100/50'>
+        <div className='bg-gray-100 my-12 text-center select-none space-y-4 rounded-md hover:bg-gray-100/50'>
             <h1 className='text-2xl font-semibold'>{title}</h1>
             <p className='text-sm'>{category}</p>
             <p>{type}</p>

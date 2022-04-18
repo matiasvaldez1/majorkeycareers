@@ -7,7 +7,9 @@ export default function ModalCard({
   category,
   id,
   type,
+  isOpen
 }) {
+    console.log(isOpen)
   return (
     <>
         <>
@@ -15,7 +17,7 @@ export default function ModalCard({
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                    <h3 className="text-3xl font-semibold">{title}</h3>
+                    <h3 className="text-2xl font-semibold">{title}</h3>
                     <h3 className="underline decoration-primary">{category}</h3>
                 </div>
                 <div className="relative p-6 flex-auto">
@@ -23,7 +25,16 @@ export default function ModalCard({
                     {description.slice(0,450)}...
                     </p>
                 </div>
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                <div className="flex items-center justify-between p-6 border-t border-solid border-slate-200 rounded-b">
+                    {isOpen ? (
+                        <div>
+                            <h1 className="text-emerald-500 hover:opacity-60 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 animate-pulse outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">Vacancy Open</h1>
+                        </div>)
+                        : null }
+                    <div>
+                        
+                    </div>
+                    <div>
                     <button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
@@ -32,13 +43,14 @@ export default function ModalCard({
                     Close
                     </button>
                     <a
-                    className="bg-emerald-500 text-white hover:opacity-60 active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="bg-emerald-500 text-white hover:opacity-60  font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     href={`https://tradehelm.com/wp-content/plugins/bullhorn-oscp/#/jobs/${id}`} target="_blank" 
                     rel="noreferrer"
                     >
                     View full vacancy
                     </a>
+                    </div>
                 </div>
                 </div>
             </div>

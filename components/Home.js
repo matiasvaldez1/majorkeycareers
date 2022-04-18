@@ -96,6 +96,7 @@ export default function Home({jobs}) {
                 type={e.employmentType}
                 description={e.publicDescription}
                 id={e.id}
+                isOpen={e.isOpen}
                 />) 
             })}
         </div>
