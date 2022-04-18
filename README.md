@@ -4,6 +4,6 @@ This is a project in which I rebranded the careers page of tradehelm/majorkey, I
 
     Old page
   <img src="https://media.discordapp.net/attachments/769061823596068874/965661197791801374/old.PNG" width="100%" />
-    New page
+    <h1>New page</h1>
   <img src="https://cdn.discordapp.com/attachments/769061823596068874/965661198085423124/new.PNG" width="100%" />
 
